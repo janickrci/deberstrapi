@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/posts"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{editing ? 'Update':'create'}} New Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size ="12" size-md="4" offset-md="4">
+        <ion-card>
+          <ion-card-header>
+      
+            <ion-card-title>{{editing ? 'Update':'create'}} new post</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+      
+      
+           
+            <ion-item>
+              <ion-label position="floating">Title</ion-label>
+              <ion-input [(ngModel)]="post.title"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Description</ion-label>
+              <ion-input [(ngModel)]="post.description"></ion-input>
+            </ion-item>
+
+            <ion-button 
+            color ="primary" 
+            expand="full" 
+            (click)="editing ? updatePost(): savePost()">
+              {{editing ? 'Update':'save'}}
+            </ion-button >
+           
+          
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
